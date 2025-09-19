@@ -1,0 +1,6 @@
+if SHIELD_TRIGGER_POINT
+
+config ZMK_KEYBOARD_NAME
+    default "TriggerPoint"
+
+endif
