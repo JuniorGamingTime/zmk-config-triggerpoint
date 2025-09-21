@@ -1,6 +1,6 @@
 #include <zephyr/dt-bindings/gpio/gpio.h>
 #define KSCAN_PHANDLES &kscan_mx_left &kscan_direct_left
-#include "trigger_point-layouts.dtsi"
+// #include "trigger_point-layouts.dtsi"
 
 
  / {
