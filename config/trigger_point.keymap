@@ -3,13 +3,6 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
-  behaviors {
-    enc_cw_ccw: enc_cw_ccw {
-      compatible = "zmk,behavior-sensor-rotate-key-press";
-      #binding-cells = <2>;
-      bindings = <&kp>, <&kp>;
-    };
-  };
   keymap {
     compatible = "zmk,keymap";
 
@@ -32,7 +25,17 @@
       >;
     };
 
-    enc_left:  encoder_1 { sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; };
-    enc_right: encoder_0 { sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>; };
+    enc_left: encoder_1 {
+      compatible = "zmk,keymap-sensor";
+      // if you have a rotary sensor node defined elsewhere, you can link it:
+      // sensor = <&encoder_1_hw>;
+      sensor-bindings = <&inc_dec_kp (((((0x0C) << 16) | (0xE9)))) (((((0x0C) << 16) | (0xEA))))>;
+    };
+
+    enc_right: encoder_0 {
+      compatible = "zmk,keymap-sensor";
+      // sensor = <&encoder_0_hw>;
+      sensor-bindings = <&inc_dec_kp (((((0x0C) << 16) | (0x6F)))) (((((0x0C) << 16) | (0x70))))>;
+    };
   };
 };
