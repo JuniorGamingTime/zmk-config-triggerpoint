@@ -54,4 +54,4 @@
         reg = <0x3c>;
         label = "OLED_L";
     };
-}
+};
