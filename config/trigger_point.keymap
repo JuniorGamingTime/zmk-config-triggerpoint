@@ -32,7 +32,7 @@
       >;
     };
 
-    enc_left:  encoder_1 { bindings = <&enc_cw_ccw C_VOL_UP C_VOL_DN>; };
-    enc_right: encoder_0 { bindings = <&enc_cw_ccw C_VOL_UP C_VOL_DN>; };
+    enc_left:  encoder_1 { sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; };
+    enc_right: encoder_0 { sensor-bindings = <&inc_dec_kp C_BRI_UP C_BRI_DN>; };
   };
 };
