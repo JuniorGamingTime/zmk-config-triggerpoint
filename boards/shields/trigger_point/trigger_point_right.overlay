@@ -1,8 +1,6 @@
 #include <zephyr/dt-bindings/gpio/gpio.h>
+#define KSCAN_PHANDLES &kscan_mx_right &kscan_direct_right
 #include "trigger_point-layouts.dtsi"
-
-/* RIGHT HALF */
-&default_domain { };
 
  / {
     chosen {
