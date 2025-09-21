@@ -3,6 +3,13 @@
 #include <dt-bindings/zmk/bt.h>
 
 / {
+  behaviors {
+    enc_cw_ccw: enc_cw_ccw {
+      compatible = "zmk,behavior-sensor-rotate-key-press";
+      #binding-cells = <2>;
+      bindings = <&kp>, <&kp>;
+    };
+  };
   keymap {
     compatible = "zmk,keymap";
 
@@ -25,7 +32,7 @@
       >;
     };
 
-    enc_left:  encoder_1 { bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; };
-    enc_right: encoder_0 { bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; };
+    enc_left:  encoder_1 { bindings = <&enc_cw_ccw C_VOL_UP C_VOL_DN>; };
+    enc_right: encoder_0 { bindings = <&enc_cw_ccw C_VOL_UP C_VOL_DN>; };
   };
 };
