@@ -1,12 +1,14 @@
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/hid_usage.h>
+
 / {
   keymap {
     compatible = "zmk,keymap";
-
     default_layer {
       bindings = <
-        &kp Q &kp W &kp E &kp R &kp T  &kp Y &kp U &kp I &kp O &kp P &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-        &kp A &kp S &kp D &kp F &kp G  &kp H &kp J &kp K &kp L &kp SEMICOLON          &kp QUOTE         &kp BACKSLASH
-        &kp Z &kp X &kp C &kp V &kp B  &kp N &kp M &kp COMMA &kp DOT &kp SLASH        &kp MINUS         &kp EQUAL
+        &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp LEFT_BRACKET &kp RIGHT_BRACKET
+        &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SEMICOLON &kp QUOTE &kp BACKSLASH
+        &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMMA &kp DOT &kp SLASH &kp MINUS &kp EQUAL
 
         &kp LEFT_CONTROL &kp LEFT_ALT &kp LEFT_GUI &kp SPACE
         &kp ESC &kp TAB &kp ENTER &kp BACKSPACE &kp DELETE
@@ -14,7 +16,6 @@
 
         &kp LEFT_SHIFT &kp LEFT_GUI &kp LEFT_ALT &kp BACKSPACE &kp ENTER &kp DELETE &kp ESC &kp DELETE &kp CAPSLOCK &kp SPACE &kp ENTER &kp INSERT
 
-        /* Direct inputs / extras */
         &kp SPACE
         &kp ESC
         &kp ENTER
@@ -22,7 +23,6 @@
       >;
     };
 
-    /* Encoders (use consumer volume codes) */
     enc_left:  encoder_1 { bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; };
     enc_right: encoder_0 { bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>; };
   };
