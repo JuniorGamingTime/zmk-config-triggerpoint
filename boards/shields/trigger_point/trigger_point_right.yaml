@@ -1,7 +1,0 @@
-file_format: "1"
-id: trigger_point_right
-name: Trigger Point (Right)
-type: shield
-features: [keys, studio, display]
-studio:
-  layout: physical_layout0
