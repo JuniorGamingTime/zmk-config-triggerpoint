@@ -4,26 +4,21 @@
 
     default_layer {
       bindings = <
-        /* Row 0: L6 + R6 */
-        &kp Q   &kp W   &kp E   &kp R   &kp T   &kp Y   &kp U   &kp I   &kp O   &kp P   &kp LEFT_BRACKET  &kp RIGHT_BRACKET
-        /* Row 1 */
-        &kp A   &kp S   &kp D   &kp F   &kp G   &kp H   &kp J   &kp K   &kp L   &kp SEMICOLON          &kp QUOTE          &kp BACKSLASH
-        /* Row 2 */
-        &kp Z   &kp X   &kp C   &kp V   &kp B   &kp N   &kp M   &kp COMMA &kp DOT &kp SLASH            &kp MINUS          &kp EQUAL
-        /* Row 3 */
-        &kp LCTRL &kp LALT &kp LGUI &kp SPACE &kp ESC &kp TAB   &kp RET &kp BACKSPACE &kp DELETE &kp RALT &kp RCTRL &kp RSHIFT
-        /* Row 4 */
-        &kp LSHIFT &kp LGUI &kp LALT &kp BACKSPACE &kp RET &kp DELETE   &kp ESC &kp DELETE  &kp CAPSLOCK &kp SPACE &kp RET  &kp INS
+        &kp Q &kp W &kp E &kp R &kp T &kp Y &kp U &kp I &kp O &kp P &kp LBKT &kp RBKT
+        &kp A &kp S &kp D &kp F &kp G &kp H &kp J &kp K &kp L &kp SCLN &kp QUOT &kp BSLH
+        &kp Z &kp X &kp C &kp V &kp B &kp N &kp M &kp COMM &kp DOT &kp SLSH &kp MINUS &kp EQUAL
+        &kp LCTRL &kp LALT &kp LGUI &kp SPACE &kp ESC &kp TAB &kp RET &kp BSPC &kp DEL &kp RALT &kp RCTRL &kp RSHFT
+        &kp LSHFT &kp LGUI &kp LALT &kp BSPC &kp RET &kp DEL &kp ESC &kp DEL &kp CAPS &kp SPACE &kp RET &kp INS
 
-        /* Direct inputs (60..63) — one screen button + one encoder press per side */
-        &kp SPACE    /* LThumb D0  */
-        &kp ESC      /* LScreen D1 */
-        &kp RET      /* LExtra D4  */
-        &kp MUTE     /* REncBtn D4 */
+        /* Direct inputs (60..63): left thumb, left screen btn, left extra btn, right encoder btn */
+        &kp SPACE
+        &kp ESC
+        &kp RET
+        &kp MUTE
       >;
     };
 
-    /* Encoders: both halves get their own */
+    /* Each half has its own encoder */
     enc_left:  encoder_1 { bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; };
     enc_right: encoder_0 { bindings = <&inc_dec_kp C_VOLUME_UP C_VOLUME_DOWN>; };
   };
