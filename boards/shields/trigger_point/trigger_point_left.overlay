@@ -1,5 +1,5 @@
 #include <zephyr/dt-bindings/gpio/gpio.h>
-#include <zmk/physical_layouts.dtsi>
+#include <trigger_point-layouts.dtsi>
 
 /* LEFT HALF */
 &default_domain { };  /* keeps Zephyr happy on some versions */
