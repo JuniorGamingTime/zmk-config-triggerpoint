@@ -1,6 +1,6 @@
 file_format: "1"
-id: triggerpoint_right
-name: Trigger Point (Right)
+id: trigger_point_left
+name: Trigger Point (Left)
 type: shield
 features: [keys, studio, display]
 studio:
