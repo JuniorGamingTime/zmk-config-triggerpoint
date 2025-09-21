@@ -1,0 +1,58 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+#include <zmk/physical_layouts.dtsi>
+
+/* LEFT HALF */
+&default_domain { };  /* keeps Zephyr happy on some versions */
+
+ / {
+    chosen {
+        zmk,kscan = <&kscan_mx_left &kscan_direct_left>;
+        zmk,matrix-transform = &matrix_transform0;
+        zmk,physical-layout = &physical_layout0;
+    };
+
+    /* --- Matrix (5 rows × 6 cols) --- */
+    kscan_mx_left: kscan_mx_left {
+        compatible = "zmk,kscan-gpio-matrix";
+        diode-direction = "col2row";
+
+        /* Rows: D5, D8, D7, D6, D19 */
+        row-gpios = <&gpio0 19 GPIO_ACTIVE_LOW>, /* D5  */
+                    <&gpio0 8  GPIO_ACTIVE_LOW>, /* D8  */
+                    <&gpio0 7  GPIO_ACTIVE_LOW>, /* D7  */
+                    <&gpio0 6  GPIO_ACTIVE_LOW>, /* D6  */
+                    <&gpio0 5  GPIO_ACTIVE_LOW>; /* D19 */
+
+        /* Cols: D18, D17, D15, D14, D16, D10 */
+        col-gpios = <&gpio0 18 GPIO_ACTIVE_LOW>, /* D18 */
+                    <&gpio0 17 GPIO_ACTIVE_LOW>, /* D17 */
+                    <&gpio0 15 GPIO_ACTIVE_LOW>, /* D15 */
+                    <&gpio0 14 GPIO_ACTIVE_LOW>, /* D14 */
+                    <&gpio0 16 GPIO_ACTIVE_LOW>, /* D16 */
+                    <&gpio0 10 GPIO_ACTIVE_LOW>; /* D10 */
+    };
+
+    /* Extra direct buttons on LEFT half:
+       Thumb=D0, Screen=D1, PotBtn=D4
+       (3 direct keys appended after the 60 matrix keys)
+    */
+    kscan_direct_left: kscan_direct_left {
+        compatible = "zmk,kscan-gpio-direct";
+        input-gpios = <&gpio0 0 GPIO_ACTIVE_LOW>,  /* D0  Thumb */
+                      <&gpio0 1 GPIO_ACTIVE_LOW>,  /* D1  Screen */
+                      <&gpio0 4 GPIO_ACTIVE_LOW>;  /* D4  PotBtn */
+    };
+};
+
+/* OLED on I2C: SCL=D2, SDA=D3 */
+&i2c0 {
+    status = "okay";
+    scl-pin = <2>;   /* D2 */
+    sda-pin = <3>;   /* D3 */
+
+    ssd1306_left: ssd1306@3c {
+        compatible = "solomon,ssd1306fb";
+        reg = <0x3c>;
+        label = "OLED_L";
+    };
+}

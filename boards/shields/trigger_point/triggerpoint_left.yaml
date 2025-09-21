@@ -1,0 +1,7 @@
+file_format: "1"
+id: triggerpoint_left
+name: Trigger Point (Left)
+type: shield
+features: [keys, studio, display]
+studio:
+  layout: physical_layout0

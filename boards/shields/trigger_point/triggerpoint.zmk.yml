@@ -1,0 +1,13 @@
+file_format: "1"
+id: trigger_point
+name: Trigger Point
+type: split
+url: ""
+requires: [nice_nano_v2]
+exposes: [ble, keys, studio, display, encoder]
+# Build targets for both halves
+targets:
+  - board: nice_nano_v2
+    shield: triggerpoint_left
+  - board: nice_nano_v2
+    shield: triggerpoint_right
