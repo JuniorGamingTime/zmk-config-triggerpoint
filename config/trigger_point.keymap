@@ -20,8 +20,8 @@
             // |     ^    |     Z    |    X     |     C    |     V    |    B     |     ^    |     ^    |     N    |    M     |    ,     |     .    |     /    |     ^    |
                   &trans     &kp Z      &kp X       &kp C      &kp V     &kp B      &kp F2     &kp F2      &kp N     &kp M    &kp COMMA    &kp DOT   &kp SLASH   &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
-            // |     ^    |     ^    |    ^     |     ^    |     ^    |    ^     |     ^    |    ^     |     ^    |    ^     |    ^     |     ^    |     ^    |     ^    |
-                  &trans     &trans     &trans     &trans     &trans     &trans     &kp F3     &kp F3     &trans     &trans     &trans     &trans     &trans     &trans
+            // |     ^    |     ^    |    ^     |     ^    |   space  |    ^     |     ^    |    ^     |     ^    |   space  |    ^     |     ^    |     ^    |     ^    |
+                  &trans     &trans     &trans     &trans   &kp SPACE    &trans     &kp F3     &kp F3     &trans   &kp SPACE    &trans     &trans     &trans     &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             >;
         };
