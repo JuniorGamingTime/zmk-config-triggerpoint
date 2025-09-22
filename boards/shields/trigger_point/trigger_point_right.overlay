@@ -6,8 +6,7 @@
         zmk,matrix_transform = &default_transform;
     };
 
-    /* right 5x6 matrix (put your real pins) */
-    kscan_right: kscan_right {
+    kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "col2row";
@@ -25,26 +24,4 @@
                     <&pro_micro 10 GPIO_ACTIVE_HIGH>;
     };
 
-    /* three center-right direct keys: rows 1,2,4 @ column 7 */
-    d_right_r1: d_right_r1 { compatible = "zmk,kscan-gpio-direct";
-        input-gpios = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* “7” */
-    };
-    d_right_r2: d_right_r2 { compatible = "zmk,kscan-gpio-direct";
-        input-gpios = <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* extra */
-    };
-    d_right_r4: d_right_r4 { compatible = "zmk,kscan-gpio-direct";
-        input-gpios = <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>; /* pot push */
-    };
-
-    kscan0: kscan_composite {
-        compatible = "zmk,kscan-composite";
-        rows = <5>;
-        columns = <14>;
-        wakeup-source;
-
-        right { kscan = <&kscan_right>; row-offset = <0>; col-offset = <8>; };
-        r_r1  { kscan = <&d_right_r1>;  row-offset = <1>; col-offset = <7>; };
-        r_r2  { kscan = <&d_right_r2>;  row-offset = <2>; col-offset = <7>; };
-        r_r4  { kscan = <&d_right_r4>;  row-offset = <4>; col-offset = <7>; };
-    };
 };
