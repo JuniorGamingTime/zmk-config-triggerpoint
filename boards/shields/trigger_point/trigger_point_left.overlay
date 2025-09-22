@@ -3,19 +3,20 @@
 &{/} {
   chosen { zmk,kscan = &kscan0; zmk,matrix_transform = &default_transform; };
 
+  /* 5×6 row→col matrix: rows = D5..D9, cols = D19,D18,D15,D14,D16,D10 */
   kscan0: kscan0 {
     compatible = "zmk,kscan-gpio-matrix";
     wakeup-source;
     diode-direction = "row2col";
 
-    /* Rows (outputs): D5 D6 D7 D8 D9 */
-    row-gpios = <&pro_micro 5 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 6 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 7 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 8 GPIO_ACTIVE_HIGH>,
-                <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+    /* Drive rows LOW when active (this is the important change). */
+    row-gpios = <&pro_micro 5 GPIO_ACTIVE_LOW>,
+                <&pro_micro 6 GPIO_ACTIVE_LOW>,
+                <&pro_micro 7 GPIO_ACTIVE_LOW>,
+                <&pro_micro 8 GPIO_ACTIVE_LOW>,
+                <&pro_micro 9 GPIO_ACTIVE_LOW>;
 
-    /* Cols (inputs): D19 D18 D15 D14 D16 D10  — pull up, active low */
+    /* Columns are inputs, pulled up; a press reads LOW. */
     col-gpios = <&pro_micro 19 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                 <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                 <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
