@@ -1,3 +1,4 @@
+#include <dt-bindings/zmk/matrix_transform.h>
 #include <zephyr/dt-bindings/gpio/gpio.h>
 
 / {
@@ -6,10 +7,10 @@
         zmk,matrix_transform = &left_transform;
     };
 
-    /* 5x6 left matrix (diodes on columns -> row2col; rows are inputs with pull-ups) */
     kscan_left: kscan_left {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
+        /* pick ONE that matches your wiring; if diodes are on columns, start with row2col */
         diode-direction = "row2col";
 
         row-gpios = <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
