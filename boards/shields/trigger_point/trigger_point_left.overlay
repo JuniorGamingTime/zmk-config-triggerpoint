@@ -12,7 +12,7 @@
 		compatible = "zmk,kscan-gpio-matrix";
 		wakeup-source;
 		/* Try col2row first; if no keys, change to "row2col" and rebuild */
-		diode-direction = "col2row";
+		diode-direction = "row2col";
 
 		/* Rows: D5, D6, D7, D8, D9 */
 		row-gpios = <&pro_micro 5  (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>,
