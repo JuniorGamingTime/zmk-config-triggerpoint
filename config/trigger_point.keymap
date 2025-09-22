@@ -1,12 +1,18 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 
-&{/} {
-  keymap {
-    compatible = "zmk,keymap";
-    default_layer {
-      /* single key = SPACE */
-      bindings = < &kp SPACE >;
-    };
-  };
-};
+ / {
+   keymap {
+     compatible = "zmk,keymap";
+
+     default_layer {
+       bindings = <
+         &kp Q    &kp W    &kp E    &kp R    &kp T    &kp Y
+         &kp A    &kp S    &kp D    &kp F    &kp G    &kp H
+         &kp Z    &kp X    &kp C    &kp V    &kp B    &kp N
+         &kp TAB  &kp ESC  &kp SPACE &kp ENT &kp BSPC &kp DEL
+         &kp 1    &kp 2    &kp 3    &kp 4    &kp 5    &kp 6
+       >;
+     };
+   };
+ };
