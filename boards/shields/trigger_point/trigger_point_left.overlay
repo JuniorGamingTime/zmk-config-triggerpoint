@@ -1,23 +1,23 @@
+#include <zephyr/dt-bindings/gpio/gpio.h>
+
 / {
     chosen {
         zmk,kscan = &kscan_left;
         zmk,matrix_transform = &left_transform;
-    }
+    };
 
-    /* 5x6 left matrix */
+    /* 5x6 left matrix (diodes on columns -> row2col; rows are inputs with pull-ups) */
     kscan_left: kscan_left {
         compatible = "zmk,kscan-gpio-matrix";
         wakeup-source;
         diode-direction = "row2col";
 
-        /* Rows are inputs with pull-ups, active low */
         row-gpios = <&pro_micro 5 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                     <&pro_micro 6 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                     <&pro_micro 7 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                     <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
                     <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-        /* Columns are driven, active high */
         col-gpios = <&pro_micro 19 GPIO_ACTIVE_HIGH>,
                     <&pro_micro 18 GPIO_ACTIVE_HIGH>,
                     <&pro_micro 15 GPIO_ACTIVE_HIGH>,
@@ -26,7 +26,6 @@
                     <&pro_micro 10 GPIO_ACTIVE_HIGH>;
     };
 
-    /* identity transform 5x6 */
     left_transform: keymap_transform_0 {
         compatible = "zmk,matrix-transform";
         rows = <5>;
