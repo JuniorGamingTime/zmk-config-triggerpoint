@@ -28,17 +28,17 @@
 	/* Three direct keys for column 6 at rows 0,3,4 */
 	screen_btn: screen_btn {
 		compatible = "zmk,kscan-gpio-direct";
-		input-gpios = <&pro_micro D1 GPIO_ACTIVE_LOW>;
+		input-gpios = <&pro_micro 1 GPIO_ACTIVE_LOW>;
 	};
 
 	thumb_btn: thumb_btn {
 		compatible = "zmk,kscan-gpio-direct";
-		input-gpios = <&pro_micro D0 GPIO_ACTIVE_LOW>;
+		input-gpios = <&pro_micro 0 GPIO_ACTIVE_LOW>;
 	};
 
 	pot_btn: pot_btn {
 		compatible = "zmk,kscan-gpio-direct";
-		input-gpios = <&pro_micro D4 GPIO_ACTIVE_LOW>;
+		input-gpios = <&pro_micro 4 GPIO_ACTIVE_LOW>;
 	};
 
 	/* Composite scanner exposes one 5x14 matrix to match your keymap width */
