@@ -5,16 +5,9 @@
 / {
   keymap {
     compatible = "zmk,keymap";
-
     default_layer {
-      /* 5 rows x 6 columns = 30 bindings */
-      bindings = <
-        &kp SPACE  &kp A      &kp B      &kp C      &kp D      &kp E
-        &kp F      &kp G      &kp H      &kp I      &kp J      &kp K
-        &kp L      &kp M      &kp N      &kp O      &kp P      &kp Q
-        &kp R      &kp S      &kp T      &kp U      &kp V      &kp W
-        &kp X      &kp Y      &kp Z      &kp N1     &kp N2     &kp N3
-      >;
+      /* 1 row × 1 col = 1 binding */
+      bindings = < &kp SPACE >;
     };
   };
 };
