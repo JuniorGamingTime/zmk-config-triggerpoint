@@ -6,7 +6,7 @@
 		zmk,matrix_transform = &full14;
 	};
 
-	kscan_left: kscan_left {
+	kscan_right: kscan_right {
 		compatible = "zmk,kscan-gpio-matrix";
 		wakeup-source;
 		diode-direction = "col2row";
@@ -17,8 +17,7 @@
 		            <&pro_micro 8 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>,
 		            <&pro_micro 9 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 
-		col-gpios = 
-                    <&pro_micro 19 GPIO_ACTIVE_LOW>,
+		col-gpios = <&pro_micro 19 GPIO_ACTIVE_LOW>,
 		            <&pro_micro 18 GPIO_ACTIVE_LOW>,
 		            <&pro_micro 15 GPIO_ACTIVE_LOW>,
 		            <&pro_micro 14 GPIO_ACTIVE_LOW>,
@@ -45,9 +44,9 @@
 		columns = <14>;
 		wakeup-source;
 
-		left   { kscan = <&kscan_left>; row-offset = <0>; col-offset = <0>; };
-		screen { kscan = <&screen_btn>;   row-offset = <0>; col-offset = <6>; };
-		thumb  { kscan = <&thumb_btn>;   row-offset = <3>; col-offset = <6>; };
+		right   { kscan = <&kscan_right>; row-offset = <0>; col-offset = <8>; };
+		screen  { kscan = <&screen_btn>;   row-offset = <0>; col-offset = <7>; };
+		thumb   { kscan = <&thumb_btn>;   row-offset = <3>; col-offset = <7>; };
 		
 	};
 
