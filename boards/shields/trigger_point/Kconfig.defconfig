@@ -1,49 +1,63 @@
 if SHIELD_TRIGGER_POINT_LEFT
+
 config ZMK_KEYBOARD_NAME
     default "Trigger Point"
 
-config ZMK_SPLIT
-    def_bool y
-
 config ZMK_SPLIT_ROLE_CENTRAL
-    def_bool y
+    default y
 
-# Central = USB on
 config ZMK_USB
     def_bool y
 config USB_DEVICE_STACK
     def_bool y
-config ZMK_DISPLAY
-    def_bool y
-config DISPLAY
-    def_bool y
-config SSD1306
-    def_bool y
-config LVGL
-    def_bool y
-endif
+
+endif   # Left side
 
 if SHIELD_TRIGGER_POINT_RIGHT
-config ZMK_KEYBOARD_NAME
-    default "Trigger Point"
-
-config ZMK_SPLIT
-    def_bool y
 
 config ZMK_SPLIT_ROLE_PERIPHERAL
     def_bool y
 
-# Peripheral = USB off (prevents host from seeing a second HID)
 config ZMK_USB
     def_bool n
+
 config USB_DEVICE_STACK
     def_bool n
-config ZMK_DISPLAY
-    def_bool y
-config DISPLAY
-    def_bool y
+
+endif   # Right side
+
+if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
+
+config ZMK_SPLIT
+    default y
+
+if ZMK_DISPLAY
+
+config I2C
+    default y
+
 config SSD1306
-    def_bool y
-config LVGL
-    def_bool y
-endif
+    default y
+
+endif # ZMK_DISPLAY
+
+if LVGL
+
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_DPI_DEF
+    default 148
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+endif # LVGL
+
+endif   # Left || Right
+
+
