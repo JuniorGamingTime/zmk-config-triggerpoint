@@ -4,6 +4,7 @@
 	chosen {
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &full14;
+        zephyr,display = &oled;
 	};
 
 	kscan_right: kscan_right {
