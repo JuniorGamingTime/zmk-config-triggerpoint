@@ -4,18 +4,16 @@ config ZMK_KEYBOARD_NAME
 
 config ZMK_SPLIT
     def_bool y
-config ZMK_SPLIT_BLE
-    def_bool y
+
 config ZMK_SPLIT_ROLE_CENTRAL
     def_bool y
 
-# Left = USB host
+# Central = USB on
 config ZMK_USB
     def_bool y
 config USB_DEVICE_STACK
     def_bool y
 endif
-
 
 if SHIELD_TRIGGER_POINT_RIGHT
 config ZMK_KEYBOARD_NAME
@@ -23,12 +21,11 @@ config ZMK_KEYBOARD_NAME
 
 config ZMK_SPLIT
     def_bool y
-config ZMK_SPLIT_BLE
-    def_bool y
+
 config ZMK_SPLIT_ROLE_PERIPHERAL
     def_bool y
 
-# Right = no USB (avoid the ZMK_USB “assigned y but got n” warning)
+# Peripheral = USB off (prevents host from seeing a second HID)
 config ZMK_USB
     def_bool n
 config USB_DEVICE_STACK
