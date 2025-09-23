@@ -70,21 +70,18 @@
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb-i2c";
-        reg = <0x3c>;
-        label = "SSD1306";
-        width = <128>;          /* 128x64 panel; use 32 if yours is 128x32 */
+        reg = <0x3c>;                 /* use 0x3d if that’s your board */
+        status = "okay";
+        width = <128>;                 /* 128x64 panel; use 32 if 128x32 */
         height = <64>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <63>; /* 63 for 64px tall; 31 for 32px tall */
-
-        /* REQUIRED/COMMON TUNABLES */
-        prechargep = <0x22>;    /* pre-charge period (typical) */
-        vcomh = <0x20>;         /* VCOMH deselect (typical) */
-
+        multiplex-ratio = <63>;        /* 31 if height=32 */
+        prechargep = <0x22>;
+        vcomh = <0x20>;
         segment-remap;
         com-invdir;
-        /* reset-gpios = <&pro_micro ? GPIO_ACTIVE_LOW>;  // if you wired RST */
+        /* reset-gpios = <&pro_micro ? GPIO_ACTIVE_LOW>;  // only if your OLED RST is wired */
     };
 };
