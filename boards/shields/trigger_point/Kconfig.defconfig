@@ -1,4 +1,11 @@
-if SHIELD_TRIGGER_POINT_LEFT
+if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT || SHIELD_TRIGGER_POINT_DONGLE
+
+config ZMK_SPLIT
+    default y
+
+endif   # Left, Right anf Dongle
+
+if SHIELD_TRIGGER_POINT_DONGLE
 
 config ZMK_KEYBOARD_NAME
     default "Trigger Point"
@@ -6,14 +13,18 @@ config ZMK_KEYBOARD_NAME
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 2
+
 config ZMK_USB
     def_bool y
+
 config USB_DEVICE_STACK
     def_bool y
 
-endif   # Left side
+endif   # Dongle central
 
-if SHIELD_TRIGGER_POINT_RIGHT
+if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
 
 config ZMK_SPLIT_ROLE_PERIPHERAL
     def_bool y
@@ -24,14 +35,9 @@ config ZMK_USB
 config USB_DEVICE_STACK
     def_bool n
 
-endif   # Right side
-
-if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
-
-config ZMK_SPLIT
-    default y
-
 
 endif   # Left || Right
+
+
 
 

@@ -3,3 +3,6 @@ config SHIELD_TRIGGER_POINT_LEFT
 
 config SHIELD_TRIGGER_POINT_RIGHT
     def_bool $(shields_list_contains,trigger_point_right)
+
+config SHIELD_TRIGGER_POINT_DONGLE
+    def_bool $(shields_list_contains,trigger_point_dongle)

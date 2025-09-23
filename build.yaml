@@ -25,3 +25,5 @@ include:
     shield: trigger_point_right
   - board: nice_nano_v2
     shield: settings_reset
+  - board: nice_nano_v2
+    shield: sweep_central_dongle dongle_display
