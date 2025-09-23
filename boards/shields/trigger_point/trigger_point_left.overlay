@@ -69,17 +69,22 @@
     status = "okay";
 
     oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb";
-        reg = <0x3c>;            /* 0x3C is common; use 0x3D if your module is set that way */
+        compatible = "solomon,ssd1306fb-i2c";
+        reg = <0x3c>;
         label = "SSD1306";
-        width = <128>;           /* set 128 x 32 if your panel is 128x32 */
-        height = <64>;           /* use <32> for 128x32 panels */
+        width = <128>;          /* 128x64 panel; use 32 if yours is 128x32 */
+        height = <64>;
         segment-offset = <0>;
         page-offset = <0>;
         display-offset = <0>;
-        multiplex-ratio = <63>;  /* 63 for 64px tall; use 31 for 32px tall */
+        multiplex-ratio = <63>; /* 63 for 64px tall; 31 for 32px tall */
+
+        /* REQUIRED/COMMON TUNABLES */
+        prechargep = <0x22>;    /* pre-charge period (typical) */
+        vcomh = <0x20>;         /* VCOMH deselect (typical) */
+
         segment-remap;
         com-invdir;
-        /* reset-gpios = <&pro_micro  ? GPIO_ACTIVE_LOW>;  // if your board has RST wired */
+        /* reset-gpios = <&pro_micro ? GPIO_ACTIVE_LOW>;  // if you wired RST */
     };
 };
