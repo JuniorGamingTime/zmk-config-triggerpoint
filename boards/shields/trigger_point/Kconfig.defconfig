@@ -17,6 +17,8 @@ config ZMK_DISPLAY
     def_bool y
 config DISPLAY
     def_bool y
+config SSD1306
+    def_bool y
 config LVGL
     def_bool y
 endif
@@ -39,6 +41,8 @@ config USB_DEVICE_STACK
 config ZMK_DISPLAY
     def_bool y
 config DISPLAY
+    def_bool y
+config SSD1306
     def_bool y
 config LVGL
     def_bool y
