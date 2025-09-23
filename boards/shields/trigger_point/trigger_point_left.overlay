@@ -2,6 +2,7 @@
 
 / {
 	chosen {
+        zmk,split-role = "peripheral";
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &full14;
 	};

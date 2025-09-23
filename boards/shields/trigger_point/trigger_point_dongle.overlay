@@ -2,11 +2,12 @@
 
 / {
     chosen {
+		zmk,split-role = "central";
         zmk,kscan = &mock_kscan;
 		zephyr,display = &oled;
     };
 
-    mock_kscan: mock_kscan_0 {
+    mock_kscan: mock_kscan_1 {
         compatible = "zmk,kscan-mock";
         columns = <0>;
         rows = <0>;
