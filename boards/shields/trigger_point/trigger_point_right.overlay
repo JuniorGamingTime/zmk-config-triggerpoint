@@ -4,7 +4,6 @@
 	chosen {
 		zmk,kscan = &kscan0;
 		zmk,matrix_transform = &full14;
-        zephyr,display = &oled;
 	};
 
 	kscan_right: kscan_right {
@@ -66,23 +65,3 @@
     };
 };
 
-&i2c0 {
-    status = "okay";
-
-    oled: ssd1306@3c {
-        compatible = "solomon,ssd1306fb-i2c";
-        reg = <0x3c>;                 /* use 0x3d if that’s your board */
-        status = "okay";
-        width = <128>;                 /* 128x64 panel; use 32 if 128x32 */
-        height = <64>;
-        segment-offset = <0>;
-        page-offset = <0>;
-        display-offset = <0>;
-        multiplex-ratio = <63>;        /* 31 if height=32 */
-        prechargep = <0x22>;
-        vcomh = <0x20>;
-        segment-remap;
-        com-invdir;
-        /* reset-gpios = <&pro_micro ? GPIO_ACTIVE_LOW>;  // only if your OLED RST is wired */
-    };
-};
