@@ -1,16 +1,35 @@
-if SHIELD_TRIGGERPOINT_LEFT
-
+if SHIELD_TRIGGER_POINT_LEFT
 config ZMK_KEYBOARD_NAME
     default "Trigger Point"
 
+config ZMK_SPLIT
+    default y
+config ZMK_SPLIT_BLE
+    default y
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
+# Left = USB host
+config ZMK_USB
+    default y
+config USB_DEVICE_STACK
+    default y
 endif
 
-if SHIELD_TRIGGERPOINT_LEFT || SHIELD_TRIGGERPOINT_RIGHT
+if SHIELD_TRIGGER_POINT_RIGHT
+config ZMK_KEYBOARD_NAME
+    default "Trigger Point"
 
 config ZMK_SPLIT
     default y
+config ZMK_SPLIT_BLE
+    default y
+config ZMK_SPLIT_ROLE_PERIPHERAL
+    default y
 
+# Right = no USB
+config ZMK_USB
+    default n
+config USB_DEVICE_STACK
+    default n
 endif
