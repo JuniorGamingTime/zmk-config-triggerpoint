@@ -13,6 +13,12 @@ config ZMK_USB
     def_bool y
 config USB_DEVICE_STACK
     def_bool y
+config ZMK_DISPLAY
+    def_bool y
+config DISPLAY
+    def_bool y
+config LVGL
+    def_bool y
 endif
 
 if SHIELD_TRIGGER_POINT_RIGHT
@@ -30,4 +36,10 @@ config ZMK_USB
     def_bool n
 config USB_DEVICE_STACK
     def_bool n
+config ZMK_DISPLAY
+    def_bool y
+config DISPLAY
+    def_bool y
+config LVGL
+    def_bool y
 endif
