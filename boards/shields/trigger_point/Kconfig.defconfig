@@ -43,6 +43,12 @@ config USB_DEVICE_STACK
 # Left || Right
 endif   
 
+if SHIELD_TRIGGER_POINT_DONGLE || SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
+
+config BT_CTLR_TX_PWR_PLUS_8
+    def_bool y
+
+endif
 
 
 
