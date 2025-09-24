@@ -1,6 +1,6 @@
 #include <dt-bindings/gpio/gpio.h>
 
-&{/} {
+/ {
 	chosen {
         zmk,split-role = "peripheral";
 		zmk,kscan = &kscan0;

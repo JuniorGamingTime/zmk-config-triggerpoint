@@ -3,8 +3,9 @@ if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT || SHIELD_TRIGGER_POI
 config ZMK_SPLIT
     default y
 
-config ZMK_BLE
-	default y
+config DEVICE_MAX_NAME_LEN
+    default 96
+
 
 # Left, Right and Dongle
 endif   
@@ -18,11 +19,11 @@ config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
     default 2
 
 config BT_MAX_CONN
-    default 6
+    default 3
 
 # Set this to the same number as BT_MAX_CONN
 config BT_MAX_PAIRED
-    default 6
+    default 4
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y

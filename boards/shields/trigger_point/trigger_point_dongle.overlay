@@ -1,15 +1,5 @@
-#include <dt-bindings/zmk/matrix_transform.h>
-
 / {
     chosen {
-		zmk,split-role = "central";
-        zmk,kscan = &mock_kscan;
-    };
-
-    mock_kscan: mock_kscan_1 {
-        compatible = "zmk,kscan-mock";
-        columns = <0>;
-        rows = <0>;
-        events = <0>;
+        zmk,split-role = "central";
     };
 };
