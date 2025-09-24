@@ -1,29 +1,28 @@
 if SHIELD_TRIGGER_POINT_DONGLE
 
+
+# Max 16 characters in keyboard name
 config ZMK_KEYBOARD_NAME
     default "Trigger Point"
-
-config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
-    int
-    default 2
-
-config BT_MAX_CONN
-    int
-    default 3
-
-# Set this to the same number as BT_MAX_CONN
-config BT_MAX_PAIRED
-    int
-    default 4
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
-config ZMK_USB
-    def_bool y
+config ZMK_SPLIT
+    default y
 
-config USB_DEVICE_STACK
-    def_bool y
+# Set this to the number of peripherals your dongle will have.
+# For a unibody, this would be 1. If you have left and right halves, set it to 2, etc.
+config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    default 1
+
+# Set this to ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS + your desired number of BT profiles (default is 5)
+config BT_MAX_CONN
+    default 6
+
+# Set this to the same number as BT_MAX_CONN
+config BT_MAX_PAIRED
+    default 6
 
 # Dongle central
 endif   
@@ -33,20 +32,11 @@ if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
 config ZMK_SPLIT_ROLE_PERIPHERAL
     def_bool y
 
-config ZMK_USB
-    def_bool n
-
-config USB_DEVICE_STACK
-    def_bool n
-
 
 # Left || Right
 endif   
 
 if SHIELD_TRIGGER_POINT_DONGLE || SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
-
-config BT_CTLR_TX_PWR_PLUS_8
-    def_bool y
 
 endif
 
