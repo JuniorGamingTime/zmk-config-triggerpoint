@@ -3,8 +3,8 @@ if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT || SHIELD_TRIGGER_POI
 config ZMK_SPLIT
     default y
 
-config DEVICE_MAX_NAME_LEN
-    default 96
+config ZMK_SPLIT_BLE
+    def_bool y
 
 
 # Left, Right and Dongle
@@ -16,13 +16,16 @@ config ZMK_KEYBOARD_NAME
     default "Trigger Point"
 
 config ZMK_SPLIT_BLE_CENTRAL_PERIPHERALS
+    int
     default 2
 
 config BT_MAX_CONN
+    int
     default 3
 
 # Set this to the same number as BT_MAX_CONN
 config BT_MAX_PAIRED
+    int
     default 4
 
 config ZMK_SPLIT_ROLE_CENTRAL
