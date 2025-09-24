@@ -1,4 +1,5 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include "trigger_point-pinctrl.dtsi"
 
 / {
     default_transform: keymap_transform0 {
@@ -17,11 +18,15 @@
 };
 
 &i2c0 {
+    compatible = "nordic,nrf-twi";
     status = "okay";
+    pinctrl-0 = <&i2c0_default>;
+    pinctrl-1 = <&i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+    clock-frequency = <I2C_BITRATE_FAST>; 
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
-        label = "SSD1306";
         reg = <0x3c>;
         width = <128>;
         height = <64>;
@@ -29,10 +34,8 @@
         page-offset = <0>;
         display-offset = <0>;
         multiplex-ratio = <31>;
-        segment-remap;
-        com-invdir;
         com-sequential;
-        inversion-on;
         prechargep = <0x22>;
+        inversion-on;
     };
-};
+};  
