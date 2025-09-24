@@ -24,7 +24,7 @@ config BT_MAX_CONN
     default 3
 config DEVICE_MAX_NAME_LEN
     int
-    default 96
+    default 256
 
 # Set this to the same number as BT_MAX_CONN
 config BT_MAX_PAIRED
