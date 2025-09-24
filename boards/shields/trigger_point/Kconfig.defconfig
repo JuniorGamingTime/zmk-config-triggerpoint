@@ -32,7 +32,6 @@ if SHIELD_TRIGGER_POINT_LEFT || SHIELD_TRIGGER_POINT_RIGHT
 config ZMK_SPLIT_ROLE_PERIPHERAL
     def_bool y
 
-
 # Left || Right
 endif   
 
