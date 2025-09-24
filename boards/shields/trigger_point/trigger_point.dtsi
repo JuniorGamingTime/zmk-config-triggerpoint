@@ -21,6 +21,7 @@
 
     oled: ssd1306@3c {
         compatible = "solomon,ssd1306fb";
+        label = "SSD1306";
         reg = <0x3c>;
         width = <128>;
         height = <64>;
@@ -35,3 +36,5 @@
         prechargep = <0x22>;
     };
 };
+
+wwwwwwwwwwwwwwww
