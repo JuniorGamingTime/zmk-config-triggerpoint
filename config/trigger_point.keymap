@@ -4,10 +4,47 @@
 #include <dt-bindings/zmk/outputs.h>
 
 / {
+    behaviors {
+        rot_kp: sensor_rotate_kp {
+            compatible = "zmk,behavior-sensor-rotate-var";
+            #sensor-binding-cells = <2>;
+            bindings = <&kp>, <&kp>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
+          display-name = "Base";
+            sensor-bindings = <
+                &rot_kp PG_UP PG_DN
+            >;
+            bindings = <
+            // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+            // | Number 1 | Number 2 | Number 3 | Number 4 | Number 5 | Number 6 |     ^    |     ^    | Number 7 | Number 8 | Number 9 | Number 0 | Backspace|     ^    |
+                  &kp N1     &kp N2     &kp N3     &kp N4     &kp N5     &kp N6      &kp A      &kp A     &kp N7     &kp N8     &kp N9     &kp N0    &kp BSPC    &kp RET  
+            // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+            // |     ^    |     Q    |    W     |     E    |     R    |    T     |  unused  |  unused  |     Y    |    U     |    I     |     O    |     P    |     ^    |
+                  &trans     &kp Q      &kp W       &kp E      &kp R     &kp T      &trans     &trans     &kp Y     &kp U      &kp I       &kp O      &kp P      &trans
+            // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+            // |     ^    |     A    |    S     |     D    |     F    |    G     |  unused  |  unused  |     H    |    J     |    K     |     L    |     ;    |     ^    |
+                  &trans     &kp A      &kp S       &kp D      &kp F     &kp G      &trans     &trans      &kp H     &kp J      &kp K       &kp L    &kp SEMI    &trans
+            // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+            // |     ^    |     Z    |    X     |     C    |     V    |    B     |     ^    |     ^    |     N    |    M     |    ,     |     .    |     /    |     ^    |
+                  &trans     &kp Z      &kp X       &kp C      &kp V     &kp B      &kp B      &kp B       &kp N     &kp M    &kp COMMA    &kp DOT   &kp SLASH   &trans
+            // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+            // |     ^    |     ^    |    ^     |   space  |     ^    |    ^     |     ^    |    ^     |     ^    |     ^    |   space  |     ^    |     ^    |     ^    |
+                  &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans     &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans
+            // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
+            >;
+        };
+
+        extras_layer {
+          display-name = "Extras";
+            sensor-bindings = <
+                &rot_kp PG_UP PG_DN
+            >;
             bindings = <
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |
@@ -22,8 +59,8 @@
             // |     ^    |     Z    |    X     |     C    |     V    |    B     |     ^    |     ^    |     N    |    M     |    ,     |     .    |     /    |     ^    |
                   &trans     &kp Z      &kp X       &kp C      &kp V     &kp B      &kp B      &kp B       &kp N     &kp M    &kp COMMA    &kp DOT   &kp SLASH   &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
-            // |     ^    |     ^    |    ^     |     ^    |   space  |    ^     |     ^    |    ^     |     ^    |   space  |    ^     |     ^    |     ^    |     ^    |
-                  &trans     &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans     &trans
+            // |     ^    |     ^    |    ^     |   space  |     ^    |    ^     |     ^    |    ^     |     ^    |     ^    |   space  |     ^    |     ^    |     ^    |
+                  &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans     &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             >;
         };

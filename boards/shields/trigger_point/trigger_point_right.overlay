@@ -38,6 +38,11 @@
 		input-gpios = <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	};
 
+	encoder_push: encoder_push {
+		compatible = "zmk,kscan-gpio-direct";
+		input-gpios = <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+	};
+
 
 	/* Composite scanner exposes one 5x14 matrix to match your keymap width */
 	kscan0: kscan_composite {
@@ -46,9 +51,10 @@
 		columns = <14>;
 		wakeup-source;
 
-		right   { kscan = <&kscan_right>; row-offset = <0>; col-offset = <8>; };
-		screen  { kscan = <&screen_btn>;   row-offset = <0>; col-offset = <7>; };
-		thumb   { kscan = <&thumb_btn>;   row-offset = <3>; col-offset = <7>; };
+		right          { kscan = <&kscan_right>; row-offset = <0>; col-offset = <8>; };
+		screen         { kscan = <&screen_btn>;   row-offset = <0>; col-offset = <7>; };
+		thumb          { kscan = <&thumb_btn>;   row-offset = <3>; col-offset = <7>; };
+		encoder_push   { kscan = <&thumb_btn>;   row-offset = <4>; col-offset = <7>; };
 		
 	};
 };
