@@ -1,6 +1,6 @@
 #include <dt-bindings/zmk/matrix_transform.h>
-#include "trigger_point-layouts.dtsi"
 #include "trigger_point.dtsi"
+#include "trigger_point-layouts.dtsi"
 
 / {
     chosen {
