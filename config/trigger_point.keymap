@@ -3,6 +3,8 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
+#define BASE    0
+
 / {
     behaviors {
         rot_kp: sensor_rotate_kp {
@@ -17,9 +19,7 @@
 
         default_layer {
           display-name = "Base";
-            sensor-bindings = <
-                &rot_kp PG_UP PG_DN
-            >;
+            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>, <&rot_kp LEFT RIGHT>;
             bindings = <
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // | Number 1 | Number 2 | Number 3 | Number 4 | Number 5 | Number 6 |     ^    |     ^    | Number 7 | Number 8 | Number 9 | Number 0 | Backspace|     ^    |
@@ -35,16 +35,14 @@
                   &trans     &kp Z      &kp X       &kp C      &kp V     &kp B      &kp B      &kp B       &kp N     &kp M    &kp COMMA    &kp DOT   &kp SLASH   &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // |     ^    |     ^    |    ^     |   space  |     ^    |    ^     |     ^    |    ^     |     ^    |     ^    |   space  |     ^    |     ^    |     ^    |
-                  &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans     &trans     &trans     &trans   &kp SPACE    &trans     &trans     &trans
+                  &trans     &trans     &trans   &kp SPACE    &trans     &trans      &kp A      &kp A     &trans     &trans   &kp SPACE    &trans     &trans     &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             >;
         };
 
         extras_layer {
           display-name = "Extras";
-            sensor-bindings = <
-                &rot_kp PG_UP PG_DN
-            >;
+            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>, <&rot_kp UP DOWN>;
             bindings = <
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |
