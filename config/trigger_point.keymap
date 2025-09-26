@@ -36,7 +36,7 @@
                   &trans     &kp Z      &kp X       &kp C      &kp V     &kp B      &kp B      &kp B       &kp N     &kp M    &kp COMMA    &kp DOT   &kp SLASH   &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // |     ^    |     ^    |    ^     |   space  |     ^    |    ^     |     ^    |    ^     |     ^    |     ^    |   space  |     ^    |     ^    |     ^    |
-                  &trans     &trans     &trans   &kp SPACE    &trans     &trans      &kp A      &kp A     &trans     &trans   &kp SPACE    &trans     &trans     &trans
+            &studio_unlock   &trans     &trans   &kp SPACE    &trans     &trans      &kp A      &kp A     &trans     &trans   &kp SPACE    &trans     &trans     &trans
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             >;
         };
