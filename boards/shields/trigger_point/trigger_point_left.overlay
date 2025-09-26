@@ -57,7 +57,7 @@
 		left          { kscan = <&kscan_left>; row-offset = <0>; col-offset = <0>; };
 		screen        { kscan = <&screen_btn>;   row-offset = <0>; col-offset = <6>; };
 		thumb         { kscan = <&thumb_btn>;   row-offset = <3>; col-offset = <6>; };
-		encoder_push  { kscan = <&thumb_btn>;   row-offset = <4>; col-offset = <6>; };
+		encoder_push  { kscan = <&encoder_btn>;   row-offset = <4>; col-offset = <6>; };
 		
 	};
 };
