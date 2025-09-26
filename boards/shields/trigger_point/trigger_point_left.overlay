@@ -43,10 +43,6 @@
 		input-gpios = <&pro_micro 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 	};
 
-	&left_encoder {
-		status = "okay";
-	};
-
 	/* Composite scanner exposes one 5x14 matrix to match your keymap width */
 	kscan0: kscan_composite {
 		compatible = "zmk,kscan-composite";
@@ -60,4 +56,8 @@
 		encoder_push  { kscan = <&encoder_btn>;   row-offset = <4>; col-offset = <6>; };
 		
 	};
+};
+
+&left_encoder {
+	status = "okay";
 };
