@@ -19,7 +19,8 @@
 
         default_layer {
           display-name = "Base";
-            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>, <&rot_kp LEFT RIGHT>;
+            sensor-bindings = <&rot_kp C_VOLUME_DOWN C_VOLUME_UP>, <&rot_kp LEFT RIGHT>;
+            // For sensors first is left pot then right pot. CCW then CW
             bindings = <
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // | Number 1 | Number 2 | Number 3 | Number 4 | Number 5 | Number 6 |     ^    |     ^    | Number 7 | Number 8 | Number 9 | Number 0 | Backspace|     ^    |
@@ -42,7 +43,7 @@
 
         extras_layer {
           display-name = "Extras";
-            sensor-bindings = <&rot_kp C_VOLUME_UP C_VOLUME_DOWN>, <&rot_kp UP DOWN>;
+            sensor-bindings = <&rot_kp C_VOLUME_DOWN C_VOLUME_UP>, <&rot_kp LEFT RIGHT>;
             bindings = <
             // |----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|----------|
             // |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |     ^    |
