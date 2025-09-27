@@ -85,16 +85,16 @@
                     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6       &kp ESC       &kp ESC      &kp N7        &kp N8        &kp N9        &kp N0       &kp BSPC       &kp RET  
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |     Tab     |      Q      |      W      |      E      |      R      |      T      |             |             |      Y      |      U      |      I      |       O     |       P     |      ^      |
-                  &kp TAB         &kp Q         &kp W         &kp E         &kp R         &kp T                                     &kp Y         &kp U         &kp I          &kp O         &kp P       &trans
+                   &kp TAB        &kp Q         &kp W         &kp E         &kp R         &kp T                                     &kp Y         &kp U         &kp I          &kp O         &kp P       &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |      ^      |      A      |      S      |      D      |      F      |      G      |             |             |      H      |      J      |      K      |      L      |      ;      |      ^      |
-                    &CAPS         &kp A         &kp S         &kp D         &kp F         &kp G                                     &kp H         &kp J         &kp K          &kp L       &kp SEMI      &trans
+                  &kp CAPS        &kp A         &kp S         &kp D         &kp F         &kp G                                     &kp H         &kp J         &kp K          &kp L       &kp SEMI      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |      ^      |      Z      |      X      |      C      |      V      |      B      |      ^      |      ^      |      N      |      M      |      ,      |      .      |      /      |      ^      |
                    &trans         &kp Z         &kp X         &kp C         &kp V         &kp B         &kp B        &kp B          &kp N         &kp M       &kp COMMA      &kp DOT      &kp SLASH      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
-            // |      ^      |     GUI     |      ^      |   space     |      ^      |      ^      | Play/Pause  |      ^      |      ^      |      ^      |    space    |      ^      |     GUI     |      ^      |
-                &studio_unlock   &kp LGUI      &trans       &kp SPACE      &trans        &trans       &kp C_PP       &kp A         &trans        &trans       &kp SPACE      &trans        &kp RGUI      &trans
+            // |      ^      |     GUI     |     ALT     |   space     |     CTRL    |    SHIFT    | Play/Pause  |      ^      |     CTRL    |    SHIFT    |    space    |     ALT     |     GUI     |      ^      |
+                &studio_unlock   &kp LGUI     &kp LALT     &kp SPACE     &kp LCTRL     &kp LSHIFT      &kp C_PP       &kp A       &kp RCTRL    &kp LSHIFT     &kp SPACE     &kp LALT       &kp RGUI      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             >;
         };
@@ -107,17 +107,17 @@
             // |   Number 1  |   Number 2  |   Number 3  |   Number 4  |   Number 5  |   Number 6  |    Escape   |    Escape   |   Number 7  |   Number 8  |   Number 9  |   Number 0  |  Backspace  |    Enter    |
                     &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6       &kp ESC       &kp ESC      &kp N7        &kp N8        &kp N9        &kp N0       &kp BSPC       &kp RET  
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
-            // |      ^      |      T      |      Q      |      W      |      E      |      R      |             |             |      Y      |      U      |      I      |       O     |       P     |      ^      |
-                   &trans         &kp T         &kp Q         &kp W         &kp E         &kp R                                     &kp Y         &kp U         &kp I          &kp O         &kp P       &trans
+            // |     Tab     |      T      |      Q      |      W      |      E      |      R      |             |             |      Y      |      U      |      I      |       O     |       P     |      ^      |
+                   &kp TAB        &kp T         &kp Q         &kp W         &kp E         &kp R                                     &kp Y         &kp U         &kp I          &kp O         &kp P       &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |      ^      |      G      |      A      |      S      |      D      |      F      |             |             |      H      |      J      |      K      |      L      |      ;      |      ^      |
-                    &CAPS         &kp G         &kp A         &kp S         &kp D         &kp F                                     &kp H         &kp J         &kp K          &kp L       &kp SEMI      &trans
+                  &kp CAPS        &kp G         &kp A         &kp S         &kp D         &kp F                                     &kp H         &kp J         &kp K          &kp L       &kp SEMI      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |      ^      |      B      |      Z      |      X      |      C      |      V      |      ^      |      ^      |      N      |      M      |      ,      |      .      |      /      |      ^      |
                    &trans         &kp B         &kp Z         &kp X         &kp C         &kp V         &kp B        &kp B          &kp N         &kp M       &kp COMMA      &kp DOT      &kp SLASH      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
-            // |      ^      |      ^      |      ^      |   space     |      ^      |      ^      | Play/Pause  |      ^      |      ^      |      ^      |    space    |      ^      |      ^      |      ^      |
-                &studio_unlock    &trans       &trans       &kp SPACE      &trans        &trans       &kp C_PP       &kp A         &trans        &trans       &kp SPACE      &trans        &trans        &trans
+            // |      ^      |     GUI     |     ALT     |   space     |     CTRL    |    SHIFT    | Play/Pause  |      ^      |     CTRL    |    SHIFT    |    space    |     ALT     |     GUI     |      ^      |
+                &studio_unlock   &kp LGUI     &kp LALT     &kp SPACE     &kp LCTRL     &kp LSHIFT      &kp C_PP       &kp A       &kp RCTRL    &kp LSHIFT     &kp SPACE     &kp LALT       &kp RGUI      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             >;
         };
