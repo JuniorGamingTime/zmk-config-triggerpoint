@@ -1,5 +1,6 @@
 #include <dt-bindings/gpio/gpio.h>
 #include "trigger_point.dtsi"
+#include "trigger_point_split.dtsi"
 
 / {
 	chosen {
