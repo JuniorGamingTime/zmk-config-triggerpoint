@@ -44,6 +44,15 @@
             key-positions = <4 5>;
             bindings = <&kp PSCRN>;
         };
+        combo_select_all {
+            timeout-ms = <50>;
+            key-positions = <27 39>;
+            bindings = <&kp LC(A)>;
+        };combo_undo {
+            timeout-ms = <50>;
+            key-positions = <38 38>;
+            bindings = <&kp LC(Z)>;
+        };
 
         combo_layer_0 {
             timeout-ms = <50>;
@@ -82,7 +91,7 @@
             bindings = <
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |   Number 1  |   Number 2  |   Number 3  |   Number 4  |   Number 5  |   Number 6  |    Escape   |    Escape   |   Number 7  |   Number 8  |   Number 9  |   Number 0  |  Backspace  |    Enter    |
-                    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6       &kp ESC       &kp ESC      &kp N7        &kp N8        &kp N9        &kp N0       &kp BSPC       &kp RET  
+                    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6       &kp ESC       &kp ESC        &kp N7        &kp N8        &kp N9        &kp N0      &kp BSPC       &kp RET  
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |     Tab     |      Q      |      W      |      E      |      R      |      T      |             |             |      Y      |      U      |      I      |       O     |       P     |      ^      |
                    &kp TAB        &kp Q         &kp W         &kp E         &kp R         &kp T                                     &kp Y         &kp U         &kp I          &kp O         &kp P       &trans
@@ -93,8 +102,8 @@
             // |      ^      |      Z      |      X      |      C      |      V      |      B      |      ^      |      ^      |      N      |      M      |      ,      |      .      |      /      |      ^      |
                    &trans         &kp Z         &kp X         &kp C         &kp V         &kp B         &kp B        &kp B          &kp N         &kp M       &kp COMMA      &kp DOT      &kp SLASH      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
-            // |      ^      |     GUI     |     ALT     |   space     |     CTRL    |    SHIFT    | Play/Pause  |      ^      |     CTRL    |    SHIFT    |    space    |     ALT     |     GUI     |      ^      |
-                &studio_unlock   &kp LGUI     &kp LALT     &kp SPACE     &kp LCTRL     &kp LSHIFT      &kp C_PP       &kp A       &kp RCTRL    &kp LSHIFT     &kp SPACE     &kp LALT       &kp RGUI      &trans
+            // |      ^      |     GUI     |     ALT     |   space     |    SHIFT    |     CTRL    | Play/Pause  |      ^      |     CTRL    |    SHIFT    |    space    |     ALT     |     GUI     |      ^      |
+                   &trans        &kp LGUI     &kp LALT     &kp SPACE     &kp LSHIFT     &kp LCTRL      &kp C_PP       &kp A       &kp RCTRL    &kp RSHIFT     &kp SPACE     &kp LALT       &kp RGUI      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             >;
         };
@@ -105,7 +114,7 @@
             bindings = <
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |   Number 1  |   Number 2  |   Number 3  |   Number 4  |   Number 5  |   Number 6  |    Escape   |    Escape   |   Number 7  |   Number 8  |   Number 9  |   Number 0  |  Backspace  |    Enter    |
-                    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6       &kp ESC       &kp ESC      &kp N7        &kp N8        &kp N9        &kp N0       &kp BSPC       &kp RET  
+                    &kp N1        &kp N2        &kp N3        &kp N4        &kp N5        &kp N6       &kp ESC       &kp ESC        &kp N7        &kp N8        &kp N9        &kp N0      &kp BSPC       &kp RET  
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |     Tab     |      T      |      Q      |      W      |      E      |      R      |             |             |      Y      |      U      |      I      |       O     |       P     |      ^      |
                    &kp TAB        &kp T         &kp Q         &kp W         &kp E         &kp R                                     &kp Y         &kp U         &kp I          &kp O         &kp P       &trans
@@ -116,8 +125,8 @@
             // |      ^      |      B      |      Z      |      X      |      C      |      V      |      ^      |      ^      |      N      |      M      |      ,      |      .      |      /      |      ^      |
                    &trans         &kp B         &kp Z         &kp X         &kp C         &kp V         &kp B        &kp B          &kp N         &kp M       &kp COMMA      &kp DOT      &kp SLASH      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
-            // |      ^      |     GUI     |     ALT     |   space     |     CTRL    |    SHIFT    | Play/Pause  |      ^      |     CTRL    |    SHIFT    |    space    |     ALT     |     GUI     |      ^      |
-                &studio_unlock   &kp LGUI     &kp LALT     &kp SPACE     &kp LCTRL     &kp LSHIFT      &kp C_PP       &kp A       &kp RCTRL    &kp LSHIFT     &kp SPACE     &kp LALT       &kp RGUI      &trans
+            // |      ^      |     GUI     |     ALT     |   space     |    SHIFT    |     CTRL    | Play/Pause  |      ^      |     CTRL    |    SHIFT    |    space    |     ALT     |     GUI     |      ^      |
+                   &trans        &kp LGUI     &kp LALT     &kp SPACE     &kp LSHIFT     &kp LCTRL      &kp C_PP       &kp A       &kp RCTRL    &kp RSHIFT     &kp SPACE     &kp LALT       &kp RGUI      &trans
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             >;
         };
@@ -183,7 +192,7 @@
                    &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans   
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             // |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |     ^       |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |
-                   &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans   
+                &studio_unlock   &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans        &trans   
             // |-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|-------------|
             >;
         };

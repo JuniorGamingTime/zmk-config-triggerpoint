@@ -53,7 +53,7 @@
 		right          { kscan = <&kscan_right>; row-offset = <0>; col-offset = <8>; };
 		screen         { kscan = <&screen_btn>;   row-offset = <0>; col-offset = <7>; };
 		thumb          { kscan = <&thumb_btn>;   row-offset = <3>; col-offset = <7>; };
-		encoder_push   { kscan = <&encoder_push>;   row-offset = <4>; col-offset = <6>; };
+		encoder_push   { kscan = <&encoder_push>;   row-offset = <4>; col-offset = <7>; };
 		
 	};
 };
