@@ -7,8 +7,8 @@
 #define BASE    0
 #define GAM     1
 #define NAV     2
-#define EDIT     3
-#define FUNC     4
+#define EDIT    3
+#define FUNC    4
 
 
 / {

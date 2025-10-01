@@ -117,7 +117,7 @@
 
         combo_layer_0 {
             timeout-ms = <50>;
-            key-positions = <52 0>;
+            key-positions = <52 BASE>;
             bindings = <&to 0>;
         };
         combo_layer_1 {
@@ -141,4 +141,4 @@
             bindings = <&to 4>;
         };
     };
-}
+};
