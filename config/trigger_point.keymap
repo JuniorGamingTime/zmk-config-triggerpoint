@@ -83,7 +83,7 @@
                    &trans        &trans        &trans        &trans        &trans        &trans                                      &kp PG_DN      &kp HOME       &trans       &kp END       &trans        &trans   
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
             // |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |             |  |             |  Page Down  |    LEFT     |    DOWN     |   RIGHT     |      ^      |      ^      |
-                   &trans        &trans        &trans        &trans        &trans        &trans                                      &kp PG_UP      &trans        &trans        &trans        &trans        &trans   
+                   &trans        &trans        &trans        &trans        &trans        &trans                                      &kp PG_UP     &kp LEFT      &kp DOWN     &kp RIGHT       &trans        &trans   
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
             // |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |  |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |      ^      |
                    &trans        &trans        &trans        &trans        &trans        &trans        &trans           &trans        &trans        &trans        &trans        &trans        &trans        &trans   
