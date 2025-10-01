@@ -117,28 +117,28 @@
 
         combo_layer_0 {
             timeout-ms = <50>;
-            key-positions = <52 0>
-            bindings = <&to 0>;
+            key-positions = <52 0>;
+            bindings = <&to BASE>;
         };
         combo_layer_1 {
             timeout-ms = <50>;
             key-positions = <52 1>;
-            bindings = <&to 1>;
+            bindings = <&to GAM>;
         };
         combo_layer_2 {
             timeout-ms = <50>;
             key-positions = <52 2>;
-            bindings = <&to 2>;
+            bindings = <&to NAV>;
         };
         combo_layer_3 {
             timeout-ms = <50>;
             key-positions = <52 2>;
-            bindings = <&to 3>;
+            bindings = <&to EDIT>;
         };
         combo_layer_4 {
             timeout-ms = <50>;
             key-positions = <52 3>;
-            bindings = <&to 4>;
+            bindings = <&to FUNC>;
         };
     };
 }
