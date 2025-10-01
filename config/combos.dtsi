@@ -1,0 +1,144 @@
+/*                KEY POSITIONS
+    ╭────┬────┬────┬────┬────┬────┬────╮  ╭────┬────┬────┬────┬────┬────┬────╮
+    |  0 |  1 |  2 |  3 |  4 |  5 |  6 |  |  7 |  8 |  9 | 10 | 11 | 12 | 13 |
+    ├────┼────┼────┼────┼────┼────┼────┤  ├────┼────┼────┼────┼────┼────┼────┤
+    | 14 | 15 | 16 | 17 | 18 | 19 |    |  |    | 20 | 21 | 22 | 23 | 24 | 25 |
+    ├────┼────┼────┼────┼────┼────┼────┤  ├────┼────┼────┼────┼────┼────┼────┤
+    | 26 | 27 | 28 | 29 | 30 | 31 |    |  |    | 32 | 33 | 34 | 35 | 36 | 37 |
+    ├────┼────┼────┼────┼────┼────┼────┤  ├────┼────┼────┼────┼────┼────┼────┤
+    | 38 | 39 | 40 | 41 | 42 | 43 | 44 |  | 45 | 46 | 47 | 48 | 49 | 50 | 51 |
+    ├────┼────┼────┼────┼────┼────┼────┤  ├────┼────┼────┼────┼────┼────┼────┤
+    | 52 | 53 | 54 | 55 | 56 | 57 | 58 |  | 59 | 60 | 61 | 62 | 63 | 64 | 65 |
+    ╰────┴────┴────┴────┴────┴────┴────╯  ╰────┴────┴────┴────┴────┴────┴────╯
+*/
+    
+/ {
+    combos {
+
+        compatible = "zmk,combos";
+
+
+
+        combo_tilde {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            layers = <0 1>;
+            bindings = <&kp GRAVE>;
+        };
+        combo_cut {
+            timeout-ms = <50>;
+            key-positions = <40 41>;
+            layers = <0 1>;
+            bindings = <&kp LC(X)>;
+        };
+        combo_copy {
+            timeout-ms = <50>;
+            key-positions = <41 42>;
+            layers = <0 1>;
+            bindings = <&kp LC(C)>;
+        };
+        combo_paste {
+            timeout-ms = <50>;
+            key-positions = <42 43>;
+            layers = <0 1>;
+            bindings = <&kp LC(V)>;
+        };
+        combo_print_screen {
+            timeout-ms = <50>;
+            key-positions = <4 5>;
+            bindings = <&kp PSCRN>;
+        };
+        combo_select_all {
+            timeout-ms = <50>;
+            key-positions = <27 39>;
+            bindings = <&kp LC(A)>;
+        };
+        combo_undo {
+            timeout-ms = <50>;
+            key-positions = <38 39>;
+            bindings = <&kp LC(Z)>;
+        };
+        combo_redo {
+            timeout-ms = <50>;
+            key-positions = <39 52>;
+            bindings = <&kp LC(LS(Z))>;
+        };
+        combo_delete {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp DEL>;
+        };
+        combo_enter {
+            timeout-ms = <50>;
+            key-positions = <33 34 35>;
+            bindings = <&kp RET>;
+        };
+        combo_ctrl_shift_left {
+            timeout-ms = <50>;
+            key-positions = <55 56>;
+            bindings = <&kp LC(LSHIFT)>;
+        };
+        combo_ctrl_shift_right {
+            timeout-ms = <50>;
+            key-positions = <61 62>;
+            bindings = <&kp RC(RSHIFT)>;
+        };
+        
+        
+        
+        combo_left_bracet {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp LEFT_BRACKET>;
+        };
+
+        combo_right_bracet {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp RIGHT_BRACKET>;
+        };
+
+        combo_minus {
+            timeout-ms = <50>;
+            key-positions = <21 22>;
+            bindings = <&kp MINUS>;
+        };
+
+        combo_equals {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp EQUAL>;
+        };
+
+
+
+
+//      LAYER COMBOS
+
+        combo_layer_0 {
+            timeout-ms = <50>;
+            key-positions = <52 0>
+            bindings = <&to 0>;
+        };
+        combo_layer_1 {
+            timeout-ms = <50>;
+            key-positions = <52 1>;
+            bindings = <&to 1>;
+        };
+        combo_layer_2 {
+            timeout-ms = <50>;
+            key-positions = <52 2>;
+            bindings = <&to 2>;
+        };
+        combo_layer_3 {
+            timeout-ms = <50>;
+            key-positions = <52 2>;
+            bindings = <&to 3>;
+        };
+        combo_layer_4 {
+            timeout-ms = <50>;
+            key-positions = <52 3>;
+            bindings = <&to 4>;
+        };
+    };
+}
