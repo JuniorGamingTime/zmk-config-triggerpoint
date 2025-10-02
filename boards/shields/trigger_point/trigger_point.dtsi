@@ -15,6 +15,30 @@
 
         >;
     };
+
+    left_encoder: left_encoder {
+        compatible = "alps,ec11";
+        steps = <80>;
+        status = "disabled";
+
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    };
+
+    right_encoder: right_encoder {
+        compatible = "alps,ec11";
+        steps = <80>;
+        status = "disabled";
+
+        a-gpios = <&pro_micro 21 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+        b-gpios = <&pro_micro 20 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    };
+
+    sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <20>;
+    };
 };
 
 &i2c0 {
@@ -38,4 +62,3 @@
         inversion-on;
     };
 };
-

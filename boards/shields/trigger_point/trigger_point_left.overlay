@@ -1,6 +1,5 @@
 #include <dt-bindings/gpio/gpio.h>
 #include "trigger_point.dtsi"
-#include "trigger_point_split.dtsi"
 
 / {
 	chosen {
@@ -57,11 +56,6 @@
 		encoder_push  { kscan = <&encoder_push>;   row-offset = <4>; col-offset = <6>; };
 		
 	};
-	sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
-    };
 };
 
 &left_encoder {

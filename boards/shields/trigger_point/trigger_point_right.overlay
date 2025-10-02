@@ -1,6 +1,5 @@
 #include <dt-bindings/gpio/gpio.h>
 #include "trigger_point.dtsi"
-#include "trigger_point_split.dtsi"
 
 / {
 	chosen {
@@ -58,11 +57,6 @@
 		
 	};
 
-	sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-        triggers-per-rotation = <20>;
-    };
 };
 
 &right_encoder {
