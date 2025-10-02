@@ -76,15 +76,13 @@
         combo_ctrl_shift_left {
             timeout-ms = <50>;
             key-positions = <55 56>;
-            bindings = <&kp RCTRL>, <&kp RSHIFT>;
+            bindings = <&kp RC(RSHIFT)>;
         };
         combo_ctrl_shift_right {
             timeout-ms = <50>;
             key-positions = <61 62>;
-            bindings = <&kp LCTRL>, <&kp LSHIFT>;
+            bindings = <&kp LC(LSHIFT)>;
         };
-        
-        
         
         combo_left_bracet {
             timeout-ms = <50>;
