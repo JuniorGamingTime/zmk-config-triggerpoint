@@ -57,6 +57,12 @@
 		encoder_push   { kscan = <&encoder_push>;   row-offset = <4>; col-offset = <7>; };
 		
 	};
+
+	sensors: sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&left_encoder &right_encoder>;
+        triggers-per-rotation = <20>;
+    };
 };
 
 &right_encoder {
