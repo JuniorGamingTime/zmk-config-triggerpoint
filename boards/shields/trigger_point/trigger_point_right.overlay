@@ -62,3 +62,7 @@
 &right_encoder {
 	status = "okay";
 };
+
+&right_led_strip {
+    chain-length = <1>;
+};
