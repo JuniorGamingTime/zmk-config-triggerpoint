@@ -69,5 +69,5 @@
 &led_strip_common {
     status = "okay";
     chain-length = <1>;
-}
+};
 
