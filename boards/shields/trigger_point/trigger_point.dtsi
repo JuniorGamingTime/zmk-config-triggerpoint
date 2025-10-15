@@ -1,5 +1,7 @@
 #include <dt-bindings/zmk/matrix_transform.h>
+#include <zephyr/dt-bindings/led/led.h>
 #include "trigger_point-pinctrl.dtsi"
+
 
 / {
     default_transform: keymap_transform0 {
@@ -63,12 +65,9 @@
     };
 };
 
-/* ---- SPI bus used for WS2812 timing ---- */
-/* If you get "label 'spi1' not found", change &spi1 -> &spi3 here AND
-   leave everything else the same. */
 &spi1 {
     status = "okay";
-    pinctrl-0 = <&spi_ws2812_default>;
+    pinctrl-0 = <&spi_ws2812_default>;   /* <-- matches pinctrl label above */
     pinctrl-names = "default";
 
     right_led_strip: ws2812@0 {
@@ -83,7 +82,7 @@
 
     left_led_strip: ws2812@1 {
         compatible = "worldsemi,ws2812-spi";
-        reg = <1>;              /* different unit address from @0 */
+        reg = <1>;
         status = "disabled";
         spi-max-frequency = <4000000>;
         spi-cpha; spi-cpol;
