@@ -32,22 +32,3 @@
     };
 };
 
-/* ===========================
- *  SPI BUS & WS2812 STRIP
- * =========================== */
-&spi1 {
-    status = "okay";
-    pinctrl-0 = <&spi1_ws2812_default>;
-    pinctrl-names = "default";
-
-    led_strip_common: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-        reg = <0>;
-        status = "disabled";          /* enable per-half in overlay */
-        spi-max-frequency = <4000000>;
-        spi-cpha;
-        spi-cpol;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-        chain-length = <1>;
-    };
-};
