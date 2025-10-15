@@ -71,14 +71,22 @@
     pinctrl-0 = <&spi_ws2812_default>;
     pinctrl-names = "default";
 
-    /* Common node you enable in each half overlay */
-    led_strip_common: ws2812@0 {
+    right_led_strip: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
         status = "disabled";
         spi-max-frequency = <4000000>;
-        spi-cpha;
-        spi-cpol;
+        spi-cpha; spi-cpol;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        chain-length = <1>;
+    };
+
+    left_led_strip: ws2812@1 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <1>;              /* different unit address from @0 */
+        status = "disabled";
+        spi-max-frequency = <4000000>;
+        spi-cpha; spi-cpol;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
         chain-length = <1>;
     };

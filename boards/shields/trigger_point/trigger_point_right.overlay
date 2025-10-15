@@ -66,7 +66,7 @@
 	status = "okay";
 };
 
-&led_strip_common {
+&right_led_strip {
     status = "okay";
     chain-length = <1>;
 };
