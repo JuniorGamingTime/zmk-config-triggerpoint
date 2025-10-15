@@ -66,19 +66,9 @@
 	status = "okay";
 };
 
-/* Right half underglow on P1.07 */
-&spi1 {
+&led_strip_common {
     status = "okay";
-    mosi-pin = <39>;  /* same physical pin, different MCU */
-    sck-pin  = <2>;
-    right_led_strip: ws2812@0 {
-        compatible = "worldsemi,ws2812-spi";
-        reg = <0>;
-        spi-max-frequency = <4000000>;
-        spi-cpha;
-        spi-cpol;
-        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-        chain-length = <1>;
-        status = "okay";
-    };
-};
+    chain-length = <1>;   /* set your actual LED count */
+    /* color-mapping stays GRB unless you need RGB/BRG etc. */
+}
+

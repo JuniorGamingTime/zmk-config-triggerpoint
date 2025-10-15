@@ -1,11 +1,14 @@
-#include <zephyr/dt-bindings/pinctrl/nrf-pinctrl.h>
+#include <zephyr/dt-bindings/pinctrl/nordic-nrf-pinctrl.h>
+#include <zephyr/dt-bindings/led/led.h>
 
+/* ===========================
+ *  PINCTRL CONFIGURATIONS
+ * =========================== */
 &pinctrl {
-
-    /* I2C Configuration using dedicated I2C pins */
+    /* ---- I2C Configuration ---- */
     i2c0_default: i2c0_default {
         group1 {
-            /* SCL: P0.17 (D2), SDA: P0.20 (D3) */
+            /* SDA: P0.20, SCL: P0.17 */
             psels = <NRF_PSEL(TWIM_SDA, 0, 20)>,
                     <NRF_PSEL(TWIM_SCL, 0, 17)>;
         };
@@ -17,5 +20,36 @@
                     <NRF_PSEL(TWIM_SCL, 0, 17)>;
             low-power-enable;
         };
+    };
+
+    /* ---- SPI Configuration for WS2812 RGB LED ---- */
+    spi1_ws2812_default: spi1_ws2812_default {
+        group1 {
+            /* MOSI = P1.07 (LED data), SCK = P0.02 (dummy) */
+            psels = <NRF_PSEL(SPIM_MOSI, 1, 7)>,
+                    <NRF_PSEL(SPIM_SCK, 0, 2)>;
+        };
+    };
+};
+
+
+/* ===========================
+ *  SPI BUS & WS2812 STRIP
+ * =========================== */
+&spi1 {
+    status = "okay";
+    pinctrl-0 = <&spi1_ws2812_default>;
+    pinctrl-names = "default";
+
+    /* Default LED node — can be overridden in left/right overlays */
+    led_strip_common: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        status = "disabled";  /* overridden per half overlay */
+        spi-max-frequency = <4000000>;
+        spi-cpha;
+        spi-cpol;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        chain-length = <1>;
     };
 };
