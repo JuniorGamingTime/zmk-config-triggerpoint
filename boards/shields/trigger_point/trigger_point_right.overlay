@@ -68,7 +68,6 @@
 
 &led_strip_common {
     status = "okay";
-    chain-length = <1>;   /* set your actual LED count */
-    /* color-mapping stays GRB unless you need RGB/BRG etc. */
+    chain-length = <1>;
 }
 

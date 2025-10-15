@@ -41,11 +41,10 @@
     pinctrl-0 = <&spi1_ws2812_default>;
     pinctrl-names = "default";
 
-    /* Default LED node — can be overridden in left/right overlays */
     led_strip_common: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
-        status = "disabled";  /* overridden per half overlay */
+        status = "disabled";
         spi-max-frequency = <4000000>;
         spi-cpha;
         spi-cpol;

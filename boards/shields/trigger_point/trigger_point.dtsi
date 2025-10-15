@@ -75,11 +75,11 @@
     led_strip_common: ws2812@0 {
         compatible = "worldsemi,ws2812-spi";
         reg = <0>;
-        status = "disabled";            /* enable per half */
+        status = "disabled";
         spi-max-frequency = <4000000>;
         spi-cpha;
         spi-cpol;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
-        chain-length = <1>;             /* override per half if needed */
+        chain-length = <1>;
     };
 }
