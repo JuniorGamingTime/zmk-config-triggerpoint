@@ -1,11 +1,13 @@
 #include <dt-bindings/gpio/gpio.h>
 #include "trigger_point.dtsi"
+#include <zephyr/dt-bindings/led/led.h>
 
 / {
 	chosen {
 		zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
         zephyr,display = &ssd1306;
+		mk,underglow = &left_led_strip;
 	};
 
 	kscan_left: kscan_left {
@@ -62,6 +64,19 @@
 	status = "okay";
 };
 
-&left_led_strip {
-    chain-length = <1>;
+/* Left half underglow on P1.07 */
+&spi1 {
+    status = "okay";
+    mosi-pin = <39>;  /* P1.07 = 32 + 7 */
+    sck-pin  = <2>;   /* dummy */
+    left_led_strip: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        spi-max-frequency = <4000000>;
+        spi-cpha;
+        spi-cpol;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        chain-length = <1>;
+        status = "okay";
+    };
 };
