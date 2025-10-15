@@ -62,3 +62,24 @@
         inversion-on;
     };
 };
+
+/* ---- SPI bus used for WS2812 timing ---- */
+/* If you get "label 'spi1' not found", change &spi1 -> &spi3 here AND
+   leave everything else the same. */
+&spi1 {
+    status = "okay";
+    pinctrl-0 = <&spi_ws2812_default>;
+    pinctrl-names = "default";
+
+    /* Common node you enable in each half overlay */
+    led_strip_common: ws2812@0 {
+        compatible = "worldsemi,ws2812-spi";
+        reg = <0>;
+        status = "disabled";            /* enable per half */
+        spi-max-frequency = <4000000>;
+        spi-cpha;
+        spi-cpol;
+        color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
+        chain-length = <1>;             /* override per half if needed */
+    };
+}
