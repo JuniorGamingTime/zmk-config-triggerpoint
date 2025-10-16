@@ -68,6 +68,7 @@
 &spi1 {
     status = "okay";
     pinctrl-0 = <&spi_ws2812_default>;   /* <-- matches pinctrl label above */
+    pinctrl-1 = <&spi_ws2812_sleep>;
     pinctrl-names = "default";
 
     right_led_strip: ws2812@0 {
