@@ -66,5 +66,5 @@
 
 &left_led_strip {
     status = "okay";
-    chain-length = <38>;
+    chain-length = <1>;
 };
