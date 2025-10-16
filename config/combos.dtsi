@@ -138,5 +138,10 @@
             key-positions = <52 3>;
             bindings = <&to FUNC>;
         };
+        combo_layer_5 {
+            timeout-ms = <50>;
+            key-positions = <52 4>;
+            bindings = <&to RGB>;
+        };
     };
 };
