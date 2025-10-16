@@ -8,7 +8,7 @@
 		zmk,kscan = &kscan0;
         zmk,matrix-transform = &default_transform;
         zephyr,display = &ssd1306;
-		mk,underglow = &right_led_strip;
+		zmk,underglow = &right_led_strip;
 	};
 
 	kscan_right: kscan_right {
