@@ -76,7 +76,9 @@
         reg = <0>;
         status = "disabled";
         spi-max-frequency = <4000000>;
-        spi-cpha; spi-cpol;
+        spi-cpha; 
+        spi-cpol;
+        spi-one-frame;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
         chain-length = <1>;
     };
@@ -86,7 +88,9 @@
         reg = <1>;
         status = "disabled";
         spi-max-frequency = <4000000>;
-        spi-cpha; spi-cpol;
+        spi-cpha; 
+        spi-cpol;
+        spi-one-frame;
         color-mapping = <LED_COLOR_ID_GREEN LED_COLOR_ID_RED LED_COLOR_ID_BLUE>;
         chain-length = <1>;
     };
