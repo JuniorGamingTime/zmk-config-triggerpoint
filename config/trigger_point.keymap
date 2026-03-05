@@ -45,8 +45,8 @@
             // |      ^      |      Z      |      X      |      C      |      V      |      B      |      ^      |  |      ^      |      N      |      M      |      ,      |      .      |      /      |      ^      |
                    &mo FUNC       &kp Z         &kp X         &kp C         &kp V         &kp B         &kp B           &kp B          &kp N         &kp M       &kp COMMA      &kp DOT      &kp SLASH      &trans
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            // |      ^      |     GUI     |     ALT     |     CTRL    |   space     |    SHIFT    | Play/Pause  |  |      ^      |     CTRL    |   space     |    SHIFT    |     ALT     |     GUI     |      ^      |
-                   &mo NAV       &kp LGUI     &kp LALT      &kp LCTRL     &kp SPACE    &kp LSHIFT     &kp C_PP           &kp A       &kp RCTRL     &kp SPACE     &kp RSHIFT    &kp LALT       &kp RGUI     &mo NAV   
+            // |      ^      |     GUI     |     ALT     |     CTRL    |   space     |    SHIFT    | Play/Pause  |  |      ^      |    SHIFT    |   space     |     CTRL    |     ALT     |     GUI     |      ^      |
+                   &mo NAV       &kp LGUI     &kp LALT      &kp LCTRL     &kp SPACE    &kp LSHIFT     &kp C_PP           &kp A       &kp RSHIFT    &kp SPACE     &kp RCTRL     &kp LALT       &kp RGUI     &mo NAV   
             // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
             >;
         };
@@ -68,8 +68,8 @@
             // |      ^      |      B      |      Z      |      X      |      C      |      V      |      ^      |  |      ^      |      N      |      M      |      ,      |      .      |      /      |      ^      |
                    &trans         &kp B         &kp Z         &kp X         &kp C         &kp V         &kp B           &kp B          &kp N         &kp M       &kp COMMA      &kp DOT      &kp SLASH      &trans
             // ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤  ├─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┼─────────────┤
-            // |      ^      |     GUI     |     ALT     |     CTRL    |   space     |    SHIFT    | Play/Pause  |  |      ^      |     CTRL    |   space     |    SHIFT    |     ALT     |     GUI     |      ^      |
-                   &trans        &kp LGUI     &kp LALT      &kp LCTRL     &kp SPACE    &kp LSHIFT     &kp C_PP           &kp A       &kp RCTRL     &kp SPACE     &kp RSHIFT    &kp LALT       &kp RGUI      &trans
+            // |      ^      |     GUI     |     ALT     |     CTRL    |   space     |    SHIFT    | Play/Pause  |  |      ^      |    SHIFT    |   space     |     CTRL    |     ALT     |     GUI     |      ^      |
+                   &trans        &kp LGUI     &kp LALT      &kp LCTRL     &kp SPACE    &kp LSHIFT     &kp C_PP           &kp A       &kp RSHIFT    &kp SPACE     &kp RCTRL     &kp LALT       &kp RGUI      &trans
             // ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯  ╰─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────┴─────────────╯
             >;
         };
